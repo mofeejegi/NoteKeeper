@@ -6,3 +6,6 @@ version: 2
      steps:
        - checkout
        - run: echo "A first hello"
+       - run:
+          name: Print the Current Time
+          command: date
