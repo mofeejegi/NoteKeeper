@@ -10,6 +10,7 @@ import org.junit.runner.RunWith
 import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
 import androidx.test.rule.ActivityTestRule
 import org.hamcrest.Matchers.*
 import org.junit.Rule
@@ -38,17 +39,18 @@ class CreateNewNoteTest {
         onView(withId(R.id.fab)).perform(click())
 
         onView(withId(R.id.spinnerCourses)).perform(click())
-        onData(allOf(instanceOf(CourseInfo::class.java), equalTo(course))).perform(click())
+        //onData(allOf(instanceOf(CourseInfo::class.java), equalTo(course))).perform(click())
+        onData(equalTo(course)).perform(click())
 
         onView(withId(R.id.editNoteTitle)).perform(typeText(noteTitle))
-        onView(withId(R.id.editNoteText)).perform(typeText(noteText))
+        onView(withId(R.id.editNoteText)).perform(typeText(noteText), closeSoftKeyboard())
 
         pressBack()
 
-//        val newNote = DataManager.notes.last()
-//        assertEquals(course, newNote.course)
-//        assertEquals(noteTitle, newNote.title)
-//        assertEquals(noteText, newNote.text)
+        val newNote = DataManager.notes.last()
+        assertEquals(course, newNote.course)
+        assertEquals(noteTitle, newNote.title)
+        assertEquals(noteText, newNote.text)
 
     }
 }

@@ -1,6 +1,7 @@
 package com.mofeejegi.notekeeper
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             createNewNote()
         }
+
+//        Handler().postDelayed({
+//
+//        }, 1000)
     }
 
     private fun createNewNote() {
