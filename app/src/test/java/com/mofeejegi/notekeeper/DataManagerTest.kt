@@ -51,10 +51,4 @@ class DataManagerTest {
         assertEquals(index2, foundIndex2)
 
     }
-
-    @Test
-    fun makeFailingTest() {
-        val name = "Mofe"
-        assertEquals("Mofe_", name)
-    }
 }

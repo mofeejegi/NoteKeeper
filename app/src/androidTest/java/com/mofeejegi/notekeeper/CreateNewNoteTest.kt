@@ -53,4 +53,10 @@ class CreateNewNoteTest {
         assertEquals(noteText, newNote.text)
 
     }
+
+    @Test
+    fun makeFailingTest() {
+        val name = "Mofe"
+        assertEquals("Mofe", name)
+    }
 }
