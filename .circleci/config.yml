@@ -40,5 +40,5 @@ jobs:
           path: app/build/test-results
       - codecov/upload:
           flags: unittest
-          token: ""
+          token: "762dfac0-3505-48a1-a1a2-b6ee57fb4085"
 #          file: app/build/jacoco-xml/report.xml
