@@ -2,6 +2,7 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = "0.8.4"
+    //reportsDir = file("${buildDir}/jacoco-coverage")
 }
 
 // Include if using Robo-Electric
@@ -10,6 +11,7 @@ jacoco {
 //    jacoco.excludes = ['jdk.internal.*']
 //}
 
+// Unit test Coverage Report Creation
 project.afterEvaluate {
 
     android.applicationVariants.all { variant ->
