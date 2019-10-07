@@ -2,11 +2,12 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = "0.8.4"
-    reportsDir = file("$buildDir/jacoco")
+    //reportsDir = file("${buildDir}/jacocoCoverage")
 }
 
 tasks.withType(Test) {
     jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
 }
 
 project.afterEvaluate {
@@ -24,6 +25,7 @@ project.afterEvaluate {
                 xml.enabled = true
             }
 
+
             def excludes = [
                     '**/R.class',
                     '**/R$*.class',
@@ -32,7 +34,7 @@ project.afterEvaluate {
                     '**/*Test*.*',
                     'android/**/*.*'
             ]
-            def javaClasses = fileTree(dir: variant.javaCompiler.destinationDir, excludes: excludes)
+            def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDir, excludes: excludes)
             def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: excludes)
             classDirectories = files([javaClasses, kotlinClasses])
 

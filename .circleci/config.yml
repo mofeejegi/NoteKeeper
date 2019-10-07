@@ -28,7 +28,7 @@ jobs:
           command: ./gradlew lint test
       - run:
           name: Test Coverage
-          command: ./gradlew jacocoDemoDebug
+          command: ./gradlew testDemoDebugUnitTest
       - store_artifacts:
           path: app/build/reports
           destination: reports
@@ -36,4 +36,4 @@ jobs:
           path: app/build/test-results
       - codecov/upload:
           flags: unittest
-          file: coverage.xml
+          file: app/build/jacoco/testDemoDebugUnitTest.exec
