@@ -13,7 +13,7 @@ interface MyOnClickListener {
     fun onLongClick(v: View): Boolean
 }
 
-var lis = object: View.OnClickListener {
+var listener = object: View.OnClickListener {
     override fun onClick(v: View?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -37,7 +37,6 @@ var mc = object: MyClass(1) {
     override fun myFunction() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
 }
 
 var mi2 = object : MyOnClickListener {
