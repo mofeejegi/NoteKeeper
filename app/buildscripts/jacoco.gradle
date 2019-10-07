@@ -21,8 +21,8 @@ project.afterEvaluate {
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build."
 
             reports {
-                html.enabled = true
-                html.destination file("${buildDir}/jacoco-html")
+                html.enabled = false
+//                html.destination file("${buildDir}/jacoco-html")
                 xml.enabled = true
                 xml.destination file("${buildDir}/jacoco-xml/report.xml")
             }
