@@ -36,4 +36,4 @@ jobs:
           path: app/build/test-results
       - codecov/upload:
           flags: unittest
-          file: coverage.xml
+          file: app/build/reports/coverage/demo/debug/report.xml
