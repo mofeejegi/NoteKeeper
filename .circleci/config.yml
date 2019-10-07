@@ -16,6 +16,7 @@ jobs:
 #      - run:
 #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this. 
 #         command: sudo chmod +x ./gradlew
+#         file: app/build/jacoco/testDemoDebugUnitTest.exec
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
@@ -36,4 +37,4 @@ jobs:
           path: app/build/test-results
       - codecov/upload:
           flags: unittest
-          file: app/build/jacoco/testDemoDebugUnitTest.exec
+          file: app/build/reports/coverage/demo/debug/report.xml
