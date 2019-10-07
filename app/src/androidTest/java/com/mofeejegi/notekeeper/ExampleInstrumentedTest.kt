@@ -19,6 +19,7 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.mofeejegi.notekeeper", appContext.packageName)
+        //assertEquals("com.mofeejegi.notekeeper", appContext.packageName)
+        assertEquals("mofe", "mofe")
     }
 }
