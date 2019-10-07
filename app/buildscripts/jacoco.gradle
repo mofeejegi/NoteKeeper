@@ -2,9 +2,9 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = "0.8.4"
-    reportsDir = file("${buildDir}/jacoco-coverage")
 }
 
+// Include if using Robo-Electric
 //tasks.withType(Test) {
 //    jacoco.includeNoLocationClasses = true
 //    jacoco.excludes = ['jdk.internal.*']
@@ -21,8 +21,8 @@ project.afterEvaluate {
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build."
 
             reports {
-                html.enabled = false
-//                html.destination file("${buildDir}/jacoco-html")
+                html.enabled = true
+                html.destination file("${buildDir}/jacoco-html")
                 xml.enabled = true
                 xml.destination file("${buildDir}/jacoco-xml/report.xml")
             }
