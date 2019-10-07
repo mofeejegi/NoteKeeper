@@ -30,6 +30,9 @@ jobs:
       - run:
           name: Test Coverage
           command: ./gradlew testDemoDebugUnitTest
+      - run:
+          name: Test Coverage Generate
+          command: ./gradlew testDemoDebugUnitTestCoverage
       - store_artifacts:
           path: app/build/reports
           destination: reports
@@ -37,4 +40,4 @@ jobs:
           path: app/build/test-results
       - codecov/upload:
           flags: unittest
-          file: app/build/reports/coverage/demo/debug/report.xml
+          file: app/build/jacoco-xml/report.xml

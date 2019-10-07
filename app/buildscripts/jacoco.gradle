@@ -2,13 +2,13 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = "0.8.4"
-    //reportsDir = file("${buildDir}/jacocoCoverage")
+    reportsDir = file("${buildDir}/jacoco-coverage")
 }
 
-tasks.withType(Test) {
-    jacoco.includeNoLocationClasses = true
-    jacoco.excludes = ['jdk.internal.*']
-}
+//tasks.withType(Test) {
+//    jacoco.includeNoLocationClasses = true
+//    jacoco.excludes = ['jdk.internal.*']
+//}
 
 project.afterEvaluate {
 
@@ -22,7 +22,9 @@ project.afterEvaluate {
 
             reports {
                 html.enabled = true
+                html.destination file("${buildDir}/jacoco-html")
                 xml.enabled = true
+                xml.destination file("${buildDir}/jacoco-xml/report.xml")
             }
 
 
