@@ -57,6 +57,6 @@ class CreateNewNoteTest {
     @Test
     fun makeFailingTest() {
         val name = "Mofe"
-        assertEquals("Mofe", name)
+        assertEquals("Mofe_", name)
     }
 }
